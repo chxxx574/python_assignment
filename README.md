@@ -10,6 +10,7 @@ API_KEY=0TSJEOCNJMAYP9JE python ./get_raw_data.py
 ```
 set API_KEY=0TSJEOCNJMAYP9JE && python ./get_raw_data.py
 ```
+Data saved in financial_data
 
 Task2: Access the database and respond to relevant statistics
 
