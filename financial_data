@@ -1,0 +1,63 @@
+{
+          "symbol": "IBM",
+          "date": "2023-03-03",
+          "open_price": "129.35",
+          "close_price": "129.64",
+          "volume": "2860286"
+},
+{
+          "symbol": "IBM",
+          "date": "2023-03-02",
+          "open_price": "128.39",
+          "close_price": "128.93",
+          "volume": "3340254"
+},
+{
+          "symbol": "IBM",
+          "date": "2023-03-01",
+          "open_price": "128.9",
+          "close_price": "128.19",
+          "volume": "3760678"
+},
+{
+          "symbol": "IBM",
+          "date": "2023-02-28",
+          "open_price": "130.55",
+          "close_price": "129.3",
+          "volume": "5143133"
+},
+{
+          "symbol": "IBM",
+          "date": "2023-02-27",
+          "open_price": "131.42",
+          "close_price": "130.49",
+          "volume": "2761326"
+},
+{
+          "symbol": "IBM",
+          "date": "2023-02-24",
+          "open_price": "129.62",
+          "close_price": "130.57",
+          "volume": "3015907"
+},
+{
+          "symbol": "IBM",
+          "date": "2023-02-23",
+          "open_price": "131.5",
+          "close_price": "130.79",
+          "volume": "3725648"
+},
+{
+          "symbol": "IBM",
+          "date": "2023-02-22",
+          "open_price": "131.9",
+          "close_price": "130.97",
+          "volume": "3200185"
+},
+{
+          "symbol": "IBM",
+          "date": "2023-02-21",
+          "open_price": "134.0",
+          "close_price": "131.71",
+          "volume": "4257210"
+},

@@ -10,16 +10,17 @@ path = str(BASE_DIR / 'financial_data.db')
 print(f"database path: {path}")
 
 class Statistics:
-    def __init__(self, start_date, end_date, symbol):
+    def __init__(self, start_date, end_date, symbol='IBM'):
         self.financial_table = 'FINANCIAL'
         self.statistc_table = 'STATISTICS'
         self.start_date = start_date
-        self.end_date = end_date
+        self.end_date = end_date if end_date else start_date
         self.symbol = symbol
         self.error_info = 0
 
 
     def main(self):
+
         cursor, conn = self.connect_database()
         query_result = self.query(cursor, conn)[0]
         result_data_list, result_info_list = [], []
@@ -49,21 +50,26 @@ class Statistics:
     WHERE type='table';"""
         # executing our sql query
         cursor.execute(sql_query)
-        print("List of tables\n")
-        # printing all tables list
-        print(cursor.fetchall())
+        # print("List of tables\n")
+        # # printing all tables list
+        # print(cursor.fetchall())
 
         return cursor, conn
 
     def query(self, cursor, conn):
+        if not self.start_date:
+            self.error_info = 2
+            result = [{'average_daily_open_price': '',
+                       'average_daily_close_price': '',
+                       'average_daily_volume': ''}]
+            return result
         query_start_date = datetime.strptime(self.start_date, '%Y-%m-%d').date()
         query_end_date = datetime.strptime(self.end_date, '%Y-%m-%d').date()
         cursor.execute("SELECT * FROM " + self.financial_table + " WHERE date BETWEEN ? AND ? AND symbol = ?", (self.start_date, self.end_date, self.symbol))
         financial_data_from_databse = cursor.fetchall()
-
         if not financial_data_from_databse:
             self.error_info = 1
-            result = [{'average_daily_open_price': '', \
+            result = [{'average_daily_open_price': '',
                        'average_daily_close_price': '',
                        'average_daily_volume': ''}]
             return result
@@ -126,6 +132,8 @@ class Statistics:
             info = ''
         if self.error_info == 1:
             info = "We do not have data for this period"
+        if self.error_info == 2:
+            info = "Please input start_date"
 
         return info
 

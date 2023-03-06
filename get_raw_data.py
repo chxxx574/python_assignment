@@ -86,13 +86,14 @@ class DataProcess:
             conn.commit()
             conn.close()
         except:
-            print('table financial_data already exists')
+            print('Database financial_data already exists')
 
 
 if __name__ == '__main__':
     D = DataProcess()
     data = D.get_data_from_API()
     jtext, Default_days = D.process_data2Json(data)
+    D.write_to_file(jtext)
     D.creat_database()
     D.add_to_database(jtext)
-    print(1)
+    print('finished')
