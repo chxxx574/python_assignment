@@ -24,6 +24,14 @@ curl -X GET http://localhost:5000/api/statistics?start_date=2023-03-01&end_date=
 
 ```
 
+for docker
+```
+docker build -t assigenment-app .
+```
+```
+docker run -e API_KEY=0TSJEOCNJMAYP9JE --rm -p 5000:5000 assigenment-app
+```
+
 # Tech stack you are using in this project：
 
  Use fastapi /uvicorn as webserver
